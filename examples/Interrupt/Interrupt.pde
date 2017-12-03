@@ -23,11 +23,7 @@ volatile unsigned long blinkCount = 0; // use volatile for shared variables
 
 void blinkLED(void)
 {
-  if (ledState == LOW) {
-    ledState = HIGH;
-    blinkCount = blinkCount + 1;  // increase when LED turns on
-  } else {
-    ledState = LOW;
+  ledState=!ledState;
   }
   digitalWrite(led, ledState);
 }
